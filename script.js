@@ -1,48 +1,40 @@
-// Get elements from HTML
-const taskInput = document.getElementById("taskInput");
-const addButton = document.getElementById("addButton");
-const taskList = document.getElementById("taskList");
 
-// Add task when button is clicked
-addButton.addEventListener("click", function () {
+/* Search Blog Posts */
+const searchInput = document.getElementById("searchInput");
+const blogItems = document.querySelectorAll(".blog-item");
+const noResults = document.getElementById("noResults");
 
-    const taskText = taskInput.value.trim();
+searchInput.addEventListener("input", function () {
+    const searchText = searchInput.value.toLowerCase();
+    let visibleCount = 0;
 
-    // Check if input is empty
-    if (taskText === "") {
-        alert("Please enter a task!");
-        return;
-    }
+    blogItems.forEach(function (item) {
+        const blogText = item.textContent.toLowerCase();
 
-    // Create a new list item
-    const li = document.createElement("li");
-
-    // Create task text
-    const span = document.createElement("span");
-    span.textContent = taskText;
-
-    // Mark task as completed when clicked
-    span.addEventListener("click", function () {
-        span.classList.toggle("completed");
+        if (blogText.includes(searchText)) {
+            item.classList.remove("d-none");
+            visibleCount++;
+        } else {
+            item.classList.add("d-none");
+        }
     });
 
-    // Create delete button
-    const deleteButton = document.createElement("button");
-    deleteButton.textContent = "Delete";
-    deleteButton.classList.add("deleteButton");
+    noResults.classList.toggle("d-none", visibleCount > 0);
+});
 
-    // Delete task when button is clicked
-    deleteButton.addEventListener("click", function () {
-        li.remove();
+/* Read More Buttons */
+const readButtons = document.querySelectorAll(".read-btn");
+
+readButtons.forEach(function (button) {
+    button.addEventListener("click", function () {
+        const extraText = button.previousElementSibling;
+
+        extraText.classList.toggle("d-none");
+
+        if (extraText.classList.contains("d-none")) {
+            button.textContent = "Read More";
+        } else {
+            button.textContent = "Read Less";
+        }
     });
-
-    // Add elements to the list item
-    li.appendChild(span);
-    li.appendChild(deleteButton);
-
-    // Add list item to task list
-    taskList.appendChild(li);
-
-    // Clear input box
-    taskInput.value = "";
 });
