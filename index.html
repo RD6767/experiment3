@@ -1,29 +1,174 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>To-Do List</title>
+    <title>My Blog Website</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+          rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">MyBlog</a>
+            <button class="navbar-toggler" type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarMenu"
+                    aria-controls="navbarMenu"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarMenu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#blogs">Blogs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-    <div class="container">
+    <!-- Hero Section -->
+    <header id="home" class="hero text-center">
+        <div class="container">
+            <h1>Welcome to My Blog</h1>
+            <p>Explore ideas, stories, technology and lifestyle.</p>
+            <a href="#blogs" class="btn btn-primary">Explore Blogs</a>
+        </div>
+    </header>
 
-        <h1>My To-Do List</h1>
+    <!-- Blog Section -->
+    <section id="blogs" class="container my-5">
+        <h2 class="text-center mb-4">Latest Blog Posts</h2>
 
-        <div class="input-box">
-            <input type="text" id="taskInput" placeholder="Enter a task">
-            <button id="addButton">Add Task</button>
+        <!-- Search Box -->
+        <div class="row mb-4">
+            <div class="col-md-6 mx-auto">
+                <input type="text" id="searchInput"
+                       class="form-control"
+                       placeholder="Search blog posts...">
+            </div>
         </div>
 
-        <ul id="taskList"></ul>
+        <div class="row g-4" id="blogContainer">
 
-    </div>
+            <!-- Blog 1 -->
+            <div class="col-12 col-md-6 col-lg-4 blog-item">
+                <div class="card h-100 shadow-sm">
+                    <img src="https://picsum.photos/seed/technology/600/350"
+                         class="card-img-top" alt="Technology">
+                    <div class="card-body">
+                        <h5 class="card-title">Technology and the Future</h5>
+                        <p class="card-text">
+                            Technology is changing the way we live,
+                            learn and work every day.
+                        </p>
+                        <p class="extra-text d-none">
+                            Artificial intelligence, robotics and digital
+                            innovation are creating exciting opportunities
+                            for the future.
+                        </p>
+                        <button class="btn btn-outline-primary read-btn">
+                            Read More
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Blog 2 -->
+            <div class="col-12 col-md-6 col-lg-4 blog-item">
+                <div class="card h-100 shadow-sm">
+                    <img src="https://picsum.photos/seed/travel/600/350"
+                         class="card-img-top" alt="Travel">
+                    <div class="card-body">
+                        <h5 class="card-title">Travel and Adventure</h5>
+                        <p class="card-text">
+                            Travelling helps us discover new places,
+                            cultures and experiences.
+                        </p>
+                        <p class="extra-text d-none">
+                            Exploring new destinations can inspire
+                            creativity, build confidence and create
+                            unforgettable memories.
+                        </p>
+                        <button class="btn btn-outline-primary read-btn">
+                            Read More
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Blog 3 -->
+            <div class="col-12 col-md-6 col-lg-4 blog-item">
+                <div class="card h-100 shadow-sm">
+                    <img src="https://picsum.photos/seed/lifestyle/600/350"
+                         class="card-img-top" alt="Lifestyle">
+                    <div class="card-body">
+                        <h5 class="card-title">Healthy Lifestyle</h5>
+                        <p class="card-text">
+                            Small daily habits can improve our health,
+                            productivity and happiness.
+                        </p>
+                        <p class="extra-text d-none">
+                            Regular exercise, balanced meals and
+                            sufficient sleep help us maintain a
+                            healthy and active lifestyle.
+                        </p>
+                        <button class="btn btn-outline-primary read-btn">
+                            Read More
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <p id="noResults" class="text-center mt-4 d-none">
+            No blog posts found.
+        </p>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section text-center py-5">
+        <div class="container">
+            <h2>About MyBlog</h2>
+            <p>
+                MyBlog is a simple platform for sharing ideas,
+                knowledge, experiences and inspiration.
+            </p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="container text-center py-5">
+        <h2>Contact Us</h2>
+        <p>Email: myblog@example.com</p>
+        <p>Thank you for visiting MyBlog!</p>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center p-3">
+        <p class="mb-0">&copy; 2026 MyBlog. All rights reserved.</p>
+    </footer>
+
+    <!-- Bootstrap JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
     <script src="script.js"></script>
-
 </body>
 </html>
