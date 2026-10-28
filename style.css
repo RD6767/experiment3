@@ -1,94 +1,118 @@
+
+/* General Styling */
 body {
     font-family: Arial, sans-serif;
-    background-color: #fceef3;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
     margin: 0;
+    background-color: #f8f9fa;
+    color: #333;
 }
 
-.container {
-    background-color: #fffafa;
-    width: 400px;
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0 5px 20px rgba(90, 120, 90, 0.2);
+/* Hero Section */
+.hero {
+    background: linear-gradient(135deg, #dceeff, #f3e5f5);
+    padding: 80px 20px;
 }
 
-h1 {
-    text-align: center;
-    color: #6b8e6b;
-    margin-bottom: 25px;
+.hero h1 {
+    font-size: 42px;
+    font-weight: bold;
+    color: #263b60;
 }
 
-.input-box {
-    display: flex;
-    gap: 10px;
+.hero p {
+    font-size: 18px;
+    margin: 20px 0;
 }
 
-input {
-    flex: 1;
-    padding: 12px;
-    font-size: 16px;
-    border: 2px solid #c8d8b8;
-    border-radius: 8px;
-    outline: none;
-}
-
-input:focus {
-    border-color: #e6a4b4;
-}
-
-#addButton {
-    padding: 12px 15px;
-    background-color: #a8c69f;
-    color: white;
+/* Blog Cards */
+.card {
     border: none;
-    border-radius: 8px;
-    cursor: pointer;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
 }
 
-#addButton:hover {
-    background-color: #8eae85;
+.card:hover {
+    transform: translateY(-5px);
 }
 
-ul {
-    list-style: none;
-    padding: 0;
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-title {
+    color: #263b60;
+    font-weight: bold;
+}
+
+/* About Section */
+.about-section {
+    background-color: #e8eef8;
+}
+
+.about-section p {
+    max-width: 650px;
+    margin: 15px auto 0;
+    line-height: 1.7;
+}
+
+/* Contact Section */
+#contact {
+    min-height: 180px;
+}
+
+/* Footer */
+footer {
     margin-top: 20px;
 }
 
-li {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #f5f8ef;
-    margin-bottom: 10px;
-    padding: 12px;
-    border-left: 5px solid #a8c69f;
-    border-radius: 8px;
+/* Responsive Media Queries */
+
+/* Tablets */
+@media screen and (max-width: 768px) {
+    .hero {
+        padding: 60px 15px;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .card-img-top {
+        height: 180px;
+    }
 }
 
-li span {
-    cursor: pointer;
-    color: #4f5f4f;
-}
+/* Mobile Phones */
+@media screen and (max-width: 576px) {
+    .hero {
+        padding: 45px 12px;
+    }
 
-.completed {
-    text-decoration: line-through;
-    color: #aaa;
-}
+    .hero h1 {
+        font-size: 27px;
+    }
 
-.deleteButton {
-    background-color: #e6a4b4;
-    color: white;
-    border: none;
-    padding: 8px 12px;
-    border-radius: 6px;
-    cursor: pointer;
-}
+    .hero p {
+        font-size: 15px;
+    }
 
-.deleteButton:hover {
-    background-color: #d8899d;
+    #blogs h2,
+    #about h2,
+    #contact h2 {
+        font-size: 24px;
+    }
+
+    .card-img-top {
+        height: 190px;
+    }
+
+    .card-body {
+        padding: 18px;
+    }
 }
